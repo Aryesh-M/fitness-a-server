@@ -8,10 +8,7 @@ router.post("/register", async (req, res) => {
   const newUser = new User({
     username: req.body.username,
     email: req.body.email,
-    password: CryptoJS.AES.encrypt(
-      req.body.password,
-      process.env.PASS_SEC
-    ).toString(),
+    password: CryptoJS.AES.encrypt(req.body.password, "sourav").toString(),
   });
 
   try {
@@ -35,10 +32,7 @@ router.post("/login", async (req, res) => {
       return false;
     }
 
-    const hashedPassword = CryptoJS.AES.decrypt(
-      user.password,
-      process.env.PASS_SEC
-    );
+    const hashedPassword = CryptoJS.AES.decrypt(user.password, "sourav");
 
     const originalPassword = hashedPassword.toString(CryptoJS.enc.Utf8);
 
@@ -54,7 +48,7 @@ router.post("/login", async (req, res) => {
         id: user._id,
         isAdmin: user.isAdmin,
       },
-      process.env.JWT_SEC,
+      "sourav",
       { expiresIn: "3d" }
     );
 

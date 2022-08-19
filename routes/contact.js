@@ -29,12 +29,12 @@ async function mainMail(name, email, subject, message) {
   transporter = await nodeMail.createTransport({
     service: "gmail",
     auth: {
-      user: process.env.GMAIL_USER,
-      pass: process.env.PASSWORD,
+      user: "yashmarakna007@gmail.com",
+      pass: "jwjfyquqgphcxkzx",
     },
   });
   const mailOption = {
-    from: process.env.GMAIL_USER,
+    from: "yashmarakna007@gmail.com",
     to: email,
     subject: subject,
     html: `You got a message from 

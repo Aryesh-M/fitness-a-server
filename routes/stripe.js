@@ -7,8 +7,8 @@ const {
 
 const router = require("express").Router();
 
-const KEY = process.env.STRIPE_KEY;
-console.log(KEY);
+const KEY =
+  "sk_test_51LVaHmHSVeqVjHs6lmgIuhoB62j3zPQ7aKdJ3pFi1ut93ORzKBySZuKfBPp06C4q8ax7WmGUiYJghXqGX8KHynQg00otOP8ltT";
 const stripe = require("stripe")(KEY);
 //CREATE
 
