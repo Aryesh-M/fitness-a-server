@@ -30,7 +30,7 @@ async function mainMail(name, email, subject, message) {
     service: "gmail",
     auth: {
       user: "yashmarakna007@gmail.com",
-      pass: "jwjfyquqgphcxkzx",
+      pass: "uxfojfcogtbmtjip",
     },
   });
   const mailOption = {
